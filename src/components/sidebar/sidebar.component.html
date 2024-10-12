@@ -1,0 +1,62 @@
+<!-- sidebar.component.html -->
+<div
+  class="w-[130px] h-screen bg-green-300 flex flex-col justify-between items-center py-[40px]"
+>
+  <div class="flex flex-col justify-center gap-[100px]">
+    <div class="flex justify-center items-center">
+      <app-logo class="scale-110" />
+    </div>
+    <div class="flex flex-col items-center gap-[18px]">
+      <div
+        *ngFor="let item of sidebarItems; let i = index"
+        class="group bg-white hover:bg-black-primary h-[55px] w-[55px] rounded-full justify-center items-center flex duration-300 cursor-pointer"
+        (mouseenter)="setHover(i, true)"
+        (mouseleave)="setHover(i, false)"
+      >
+        <app-sidebar-icons
+          [name]="item.icon"
+          [color]="isHovered[i] ? item.hoverColor : item.defaultColor"
+          class="group-hover:text-black-primary text-white duration-300 scale-75"
+        ></app-sidebar-icons>
+        <span class="text-black text-[13px] hidden">{{ item.label }}</span>
+      </div>
+    </div>
+  </div>
+  <!-- friends -->
+  <div class="w-full"></div>
+  <div class="w-full flex justify-center items-center">
+    <div
+      class="group bg-white hover:bg-black-primary h-[45px] w-[45px] rounded-full justify-center items-center flex duration-300 cursor-pointer"
+    >
+      <svg
+        width="23"
+        height="23"
+        viewBox="0 0 23 23"
+        class="group-hover:fill-black-primary fill-white group-hover:stroke-white stroke-black-primary scale-75"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="arcticons:settings" clip-path="url(#clip0_65_163)">
+          <path
+            id="Vector"
+            d="M18.7977 12.4583C18.8389 12.1405 18.8613 11.8205 18.8648 11.5C18.8613 11.1795 18.8389 10.8595 18.7977 10.5417L20.8725 8.91729C20.9662 8.84573 21.0302 8.74213 21.0523 8.62632C21.0744 8.51052 21.0531 8.39063 20.9923 8.28959L19.0277 4.88271C18.9708 4.78052 18.8785 4.70267 18.7682 4.66384C18.6579 4.625 18.5371 4.62786 18.4288 4.67188L15.9802 5.65896C15.4707 5.2702 14.9135 4.94814 14.3223 4.70063L13.9534 2.09875C13.9371 1.98362 13.8795 1.87833 13.7913 1.80252C13.7032 1.7267 13.5905 1.68552 13.4742 1.68667H9.53544C9.41916 1.68552 9.30644 1.7267 9.21828 1.80252C9.13013 1.87833 9.07254 1.98362 9.05627 2.09875L8.68731 4.70063C8.09539 4.9467 7.53806 5.26886 7.02939 5.65896L4.57127 4.67188C4.4629 4.62786 4.34218 4.625 4.23185 4.66384C4.12153 4.70267 4.02921 4.78052 3.97231 4.88271L2.00773 8.28959C1.94697 8.39063 1.9256 8.51052 1.9477 8.62632C1.96981 8.74213 2.03383 8.84573 2.12752 8.91729L4.19752 10.5417C4.15632 10.8595 4.13392 11.1795 4.13044 11.5C4.13392 11.8205 4.15632 12.1405 4.19752 12.4583L2.12752 14.0827C2.03383 14.1543 1.96981 14.2579 1.9477 14.3737C1.9256 14.4895 1.94697 14.6094 2.00773 14.7104L3.97231 18.1173C4.02921 18.2195 4.12153 18.2973 4.23185 18.3362C4.34218 18.375 4.4629 18.3721 4.57127 18.3281L7.01981 17.341C7.52937 17.7298 8.08652 18.0519 8.67773 18.2994L9.04669 20.9013C9.06296 21.0164 9.12054 21.1217 9.2087 21.1975C9.29686 21.2733 9.40958 21.3145 9.52585 21.3133H13.455C13.5713 21.3145 13.684 21.2733 13.7722 21.1975C13.8603 21.1217 13.9179 21.0164 13.9342 20.9013L14.3031 18.2994C14.8951 18.0533 15.4524 17.7311 15.9611 17.341L18.4096 18.3281C18.518 18.3721 18.6387 18.375 18.749 18.3362C18.8593 18.2973 18.9517 18.2195 19.0086 18.1173L20.9731 14.7104C21.0339 14.6094 21.0553 14.4895 21.0332 14.3737C21.0111 14.2579 20.947 14.1543 20.8534 14.0827L18.7977 12.4583ZM11.5 14.9404C10.8194 14.9414 10.1537 14.7404 9.58732 14.3629C9.02092 13.9855 8.57921 13.4485 8.31807 12.8199C8.05694 12.1913 7.98813 11.4994 8.12033 10.8318C8.25254 10.1641 8.57983 9.55059 9.06079 9.06896C9.54175 8.58733 10.1548 8.25919 10.8223 8.12605C11.4898 7.99291 12.1818 8.06076 12.8107 8.32102C13.4396 8.58127 13.9772 9.02224 14.3555 9.58811C14.7337 10.154 14.9356 10.8193 14.9356 11.5C14.9363 11.9516 14.8479 12.3988 14.6755 12.8162C14.5031 13.2336 14.2502 13.6129 13.9311 13.9325C13.612 14.252 13.233 14.5055 12.8159 14.6784C12.3987 14.8514 11.9516 14.9404 11.5 14.9404Z"
+            class="group-hover:fill-black-primary fill-white group-hover:stroke-white stroke-black-primary"
+            stroke-width="1.9"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_65_163">
+            <rect
+              width="23"
+              height="23"
+              class="group-hover:fill-black-primary fill-white group-hover:stroke-white stroke-black-primary"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+
+      <span class="text-black text-[13px] hidden">Settings</span>
+    </div>
+  </div>
+</div>

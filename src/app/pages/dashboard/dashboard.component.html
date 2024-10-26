@@ -1,7 +1,36 @@
 <div class="flex flex-grow h-screen">
-    <div class="flex flex-col flex-grow">
-      <app-header/>
-      <p>Dashboard Works</p>
+  <div class="flex flex-col flex-grow">
+    <app-header />
+    <div class="flex flex-col p-[15px] gap-[40px]">
+      <div class="flex flex-row gap-[15px]">
+        <div class="flex-1 h-[320px] flex flex-col gap-[15px]">
+          <div class="h-[50px]">
+            <h1>Active Tasks</h1>
+          </div>
+          <div class="rounded-[20px] bg-green-50 flex-grow"></div>
+        </div>
+        <div class="flex-1 h-[320px] flex flex-col gap-[15px]">
+          <div class="h-[50px]">
+            <h1>Your Progress</h1>
+          </div>
+          <div class="rounded-[20px] bg-green-50 flex-grow"></div>
+        </div>
+      </div>
+      <div class="flex flex-row gap-[15px]">
+        <div class="flex-1 h-[320px] flex flex-col gap-[15px]">
+          <div class="h-[50px]">
+            <h1>Overview</h1>
+          </div>
+          <div class="rounded-[20px] bg-green-50"></div>
+        </div>
+        <div class="flex-1 h-[320px] flex flex-col gap-[15px]">
+          <div class="h-[50px]">
+            <h1>Workshop</h1>
+          </div>
+          <div class="rounded-[20px] bg-green-50"></div>
+        </div>
+      </div>
     </div>
-    <div class="w-[30%] h-screen bg-green-50 sm:flex hidden"></div>
   </div>
+  <div class="w-[30%] h-screen bg-green-50 sm:flex hidden"></div>
+</div>

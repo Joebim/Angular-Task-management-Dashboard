@@ -27,6 +27,9 @@ module.exports = {
           "100": "#E6F3BD",
         }
       },
+      fontFamily: {
+        lexend: ['Lexend', 'sans-serif']
+      }
     },
   },
   plugins: [],

@@ -12,6 +12,7 @@
         class="group bg-white hover:bg-black-primary h-[55px] w-[55px] rounded-full justify-center items-center flex duration-300 cursor-pointer"
         (mouseenter)="setHover(i, true)"
         (mouseleave)="setHover(i, false)"
+        [routerLink]="item.route"
       >
         <app-sidebar-icons
           [name]="item.icon"
@@ -27,6 +28,7 @@
   <div class="w-full flex justify-center items-center">
     <div
       class="group bg-white hover:bg-black-primary h-[45px] w-[45px] rounded-full justify-center items-center flex duration-300 cursor-pointer"
+      routerLink="/settings"
     >
       <svg
         width="23"
